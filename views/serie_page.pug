@@ -12,13 +12,13 @@ block content
         each colonna, j in riga
           if colonna
             .col
+              - var img=colonna['images']['poster'].split('/').reverse()[0];
               .centerBlock
                 a(href="/serie/info/"+colonna['_id']+'/'+img)
                   img.img-responsive(src=colonna['images']['poster'] height="400" width="250")
               h5.text-center #{colonna['title']}
               .text-center
-                - var img=colonna['images']['poster'].split('/').reverse()[0];
-                  a(href="/serie/info/"+colonna['_id']+'/'+img) Download
+                a(href="/serie/info/"+colonna['_id']+'/'+img) Download
           else
             .col
     .text-center
