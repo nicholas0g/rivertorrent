@@ -1,0 +1,32 @@
+extends layout_serie
+block content
+    .container
+        .row
+            .col-8
+                h1 #{dati['title']} - #{dati['year']}
+                h1 Stato: #{dati['status']}
+                p.desc #{dati['synopsis']}
+                p.grassetto Rete produttrice: #{dati['network']}
+                - var paese=dati['country'].toUpperCase();
+                    p.grassetto Paese di produzione: #{paese}
+            .col-4
+                .centerBlock
+                    .spazio
+                    img(src="http://image.tmdb.org/t/p/w500/"+img height="400" width="250")
+                    .spazio
+                    .spazio
+        .row
+            .col
+                #accordion.accordion
+                    .card.m-b-0
+                        each episodio, index in dati['episodes']
+                            .card-header.collapsed(data-toggle="collapse" data-parent="#accordion" href="#collapse"+index)
+                                a.card-title Stagione #{episodio['season']} episodio #{episodio['episode']} - #{episodio['title']}
+                            .card-clock.collapse(id="collapse"+index)
+                                p.black Magnet-link per client torrent disponibili:
+                                    each torrent, index in episodio['torrents']
+                                        p 
+                                            if index == 0
+                                                a(href=torrent['url']) Link torrent qualità base
+                                            else
+                                                a(href=torrent['url']) Link torrent #{index}

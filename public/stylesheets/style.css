@@ -1,0 +1,32 @@
+.centerBlock {
+  display: table;
+  margin: auto;
+}
+body{
+    background-color: #343436
+}
+p,h1,h5{
+    color:#eee
+}
+p.black{
+    color:#000
+}
+p.grassetto{
+    color:#eee;
+    font-weight: bold
+}
+.accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .card-header.collapsed:after {
+     content: "\f067"; 
+}
+.spazio {
+  height: 5px;
+}
+p.desc{
+    color:#eee;
+    font-size: 22px
+}

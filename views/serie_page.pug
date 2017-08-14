@@ -1,0 +1,27 @@
+extends layout_serie
+
+block content
+  .container
+    .text-center
+      p
+        a(href='/serie/'+tipo+'/'+prima) Precedente 
+        |  pagina #{ora} di #{totale} 
+        a(href='/serie/'+tipo+'/'+dopo) Successiva
+    each riga, i in righe
+      .row
+        each colonna, j in riga
+          if colonna
+            .col
+              .centerBlock
+                img.img-responsive(src=colonna['images']['poster'] height="400" width="250")
+              h5.text-center #{colonna['title']}
+              .text-center
+                - var img=colonna['images']['poster'].split('/').reverse()[0];
+                  a(href="/serie/info/"+colonna['_id']+'/'+img) Download
+          else
+            .col
+    .text-center
+      p
+        a(href='/serie/'+tipo+'/'+prima) Precedente 
+        |  pagina #{ora} di #{totale} 
+        a(href='/serie/'+tipo+'/'+dopo) Successiva

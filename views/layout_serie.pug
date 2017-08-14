@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    title River Torrent
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', type='text/css', integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css', type='text/css' )
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous")
+body
+  nav.navbar.navbar.navbar-default
+    a.navbar-brand(href="#")
+      | River Torrent
+    a.btn.btn-outline-success(href="/serie/name/1") Ordina per nome
+    a.btn.btn-outline-success(href="/serie/year/1") Ordina per anno
+    a.btn.btn-outline-success(href="/serie/rating/1") Ordina per rating
+    a.btn.btn-outline-success(href="/serie/trending/1") Ordina per tendenza
+    .dropdown
+      .btn.btn-outline-success.dropdown-toggle(type="button" data-toggle="dropdown") Ordina per genere
+        span.caret
+      ul.dropdown-menu
+        li
+          a(href="/serie/action/1") Azione
+        li
+          a(href="/serie/adventure/1") Avventura
+        li
+          a(href="/serie/animation/1") Animazione
+        li
+          a(href="/serie/comedy/1") Commedia
+        li
+          a(href="/serie/crime/1") Crime
+        li
+          a(href="/serie/disaster/1") Disastrose
+        li
+          a(href="/serie/documentary/1") Documentario
+        li
+          a(href="/serie/drama/1") Drammatiche
+        li
+          a(href="/serie/family/1") Famiglia
+        li
+          a(href="/serie/fan-film/1") Fan Fiction
+        li
+          a(href="/serie/fantasy/1") Fantasy
+        li
+          a(href="/serie/film-noir/1") Noir
+        li
+          a(href="/serie/history/1") Storiche
+        li
+          a(href="/serie/horror/1") Horror
+        li
+          a(href="/serie/indie/1") Indie
+        li
+          a(href="/serie/mystery/1") Mistero
+        li
+          a(href="/serie/romance/1") Romantiche
+        li
+          a(href="/serie/science-fiction/1") Fantascienza
+        li
+          a(href="/serie/thriller/1") Triller
+        li
+          a(href="/serie/war/1") Guerra
+        li
+          a(href="/serie/western/1") Western
+    form.form-inline(method="post" action="/serie/ricerca")
+      input.form-control.mr-sm-2(type="text" placeholder="Search" name="nome")
+      button.btn.btn-outline-success.my-2.my-sm-0(type="submit") Cerca
+  block content

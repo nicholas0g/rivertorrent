@@ -1,0 +1,10 @@
+extends layout
+block content
+    p Cosa vuoi guardare?
+    p
+        a(href='/serie/trending/1') Serie TV
+    p
+        a(href='/film/1') Film
+    p.bold Stato del sistema: #{status}
+    p.bold Numero totale di serie presenti: #{serie}
+    p.bold Numero totale di film presenti: #{film}

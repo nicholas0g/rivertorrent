@@ -1,0 +1,37 @@
+extends layout
+block content
+    .container
+      h2 Accordion Example
+      p
+        strong Note:
+        |  The 
+        strong data-parent
+        |  attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.
+      #accordion.panel-group
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a(data-toggle='collapse', data-parent='#accordion', href='#collapse1') Collapsible Group 1
+          #collapse1.panel-collapse.collapse.in
+            .panel-body
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a(data-toggle='collapse', data-parent='#accordion', href='#collapse2') Collapsible Group 2
+          #collapse2.panel-collapse.collapse
+            .panel-body
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a(data-toggle='collapse', data-parent='#accordion', href='#collapse3') Collapsible Group 3
+          #collapse3.panel-collapse.collapse
+            .panel-body
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

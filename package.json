@@ -1,0 +1,27 @@
+{
+  "name": "rivertorrent",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/rivertorrent_server"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "pug": "^2.0.0-rc.3",
+    "request": "^2.81.0",
+    "serve-favicon": "~2.4.2"
+  },
+  "description": "tutti i torrent del mondo (shows&movie) direttamente dai VPS in continuo scraping ",
+  "main": "app.js",
+  "keywords": [
+    "torrent",
+    "rivertorrent"
+  ],
+  "author": "nicholas0g",
+  "license": "MIT"
+}
