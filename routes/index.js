@@ -13,7 +13,4 @@ router.get('/',function(req,res,next){
     res.render('index',{status:payload['status'],film:payload['totalMovies'],serie:payload['totalShows']});
   });
 });
-router.get('/film/:pg',function(req,res,next){
-  res.send('non disponibile')
-})
 module.exports = router;

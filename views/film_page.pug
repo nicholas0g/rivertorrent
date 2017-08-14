@@ -1,0 +1,27 @@
+extends layout_film
+
+block content
+  .container
+    .text-center
+      p
+        a(href='/film/'+tipo+'/'+prima) Precedente 
+        |  pagina #{ora} di #{totale} 
+        a(href='/film/'+tipo+'/'+dopo) Successiva
+    each riga, i in righe
+      .row
+        each colonna, j in riga
+          if colonna
+            .col
+              .centerBlock
+                a(href="/film/info/"+colonna['_id']+'/al')
+                  img.img-responsive(src=colonna['images']['poster'] height="400" width="250")
+              h5.text-center #{colonna['title']}
+              .text-center
+                a(href="/film/info/"+colonna['_id']+'/al') Download
+          else
+            .col
+    .text-center
+      p
+        a(href='/film/'+tipo+'/'+prima) Precedente 
+        |  pagina #{ora} di #{totale} 
+        a(href='/film/'+tipo+'/'+dopo) Successiva
