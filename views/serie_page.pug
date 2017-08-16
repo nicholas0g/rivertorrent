@@ -11,16 +11,16 @@ block content
       .row
         each colonna, j in riga
           if colonna
-            .col
+            .col-3
               - var img=colonna['images']['poster'].split('/').reverse()[0];
               .centerBlock
                 a(href="/serie/info/"+colonna['_id']+'/'+img)
-                  img.img-responsive(src=colonna['images']['poster'] height="400" width="250")
+                  img.img-fluid(src=colonna['images']['poster'])
               h5.text-center #{colonna['title']}
               .text-center
                 a(href="/serie/info/"+colonna['_id']+'/'+img) Download
           else
-            .col
+            .col-3
     .text-center
       p
         a(href='/serie/'+tipo+'/'+prima) Precedente 
