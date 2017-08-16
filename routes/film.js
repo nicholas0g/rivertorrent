@@ -7,7 +7,9 @@ router.get('/:filtro/:pg',function(req,res,next){
   var url='http://demo.nicholasgiordano.it/trapi/movies/'+page+'?sort='+req.params['filtro'];
   if(standard.indexOf(req.params['filtro'])==-1) url='http://demo.nicholasgiordano.it/trapi/movie/'+page+'?sort=rating&genre='+req.params['filtro'];
   request.get(url,function(err,response,body){
-    var payload=JSON.parse(body);
+    var payload;
+    try{
+    payload=JSON.parse(body);
     request.get('http://demo.nicholasgiordano.it/trapi/movies/',function(err,resp,data){
       var prima,dopo;
       var totale=JSON.parse(data).length;
@@ -26,6 +28,9 @@ router.get('/:filtro/:pg',function(req,res,next){
       }
       res.render('film_page',{ora:page,totale:totale,prima:prima,dopo:dopo,righe:righe,tipo:req.params['filtro']});
     })
+    }catch(err){
+      res.render('oos');
+    }
   });
 })
 router.post('/ricerca',function(req,res,next){
