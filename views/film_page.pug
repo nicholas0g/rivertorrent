@@ -11,15 +11,15 @@ block content
       .row
         each colonna, j in riga
           if colonna
-            .col
+            .col-3
               .centerBlock
                 a(href="/film/info/"+colonna['_id']+'/al')
-                  img.img-responsive(src=colonna['images']['poster'] height="400" width="250")
+                  img.img-fluid(src=colonna['images']['poster'])
               h5.text-center #{colonna['title']}
               .text-center
                 a(href="/film/info/"+colonna['_id']+'/al') Download
           else
-            .col
+            .col-3
     .text-center
       p
         a(href='/film/'+tipo+'/'+prima) Precedente 
