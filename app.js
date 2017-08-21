@@ -1,4 +1,5 @@
 var express = require('express');
+var nodalytics = require('nodalytics')
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -10,6 +11,7 @@ var serie = require('./routes/serie');
 var film = require('./routes/film');
 
 var app = express();
+app.use(nodalytics('UA-87825313-3'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
