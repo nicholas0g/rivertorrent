@@ -5,7 +5,7 @@ router.get('/:filtro/:pg',function(req,res,next){
   var page=parseInt(req.params['pg']);
   var standard=['rating','trending','name','year'];
   var url='http://demo.nicholasgiordano.it/trapi/movies/'+page+'?sort='+req.params['filtro'];
-  if(standard.indexOf(req.params['filtro'])==-1) url='http://demo.nicholasgiordano.it/trapi/movie/'+page+'?sort=rating&genre='+req.params['filtro'];
+  if(standard.indexOf(req.params['filtro'])==-1) url='http://demo.nicholasgiordano.it/trapi/movies/'+page+'?sort=rating&genre='+req.params['filtro'];
   request.get(url,function(err,response,body){
     var payload;
     try{
