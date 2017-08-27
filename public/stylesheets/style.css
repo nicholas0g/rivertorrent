@@ -30,3 +30,7 @@ p.desc{
     color:#eee;
     font-size: 22px
 }
+p.red{
+    color:#FF0000;
+    font-weight: bold
+}
