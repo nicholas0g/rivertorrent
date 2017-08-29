@@ -4,9 +4,9 @@ block content
   .container
     .text-center
       p
-        a(href='https://rivertorrent.com/serie/'+tipo+'/'+prima) Precedente 
+        a(href='/serie/'+tipo+'/'+prima) Precedente 
         |  pagina #{ora} di #{totale} 
-        a(href='https://rivertorrent.com/serie/'+tipo+'/'+dopo) Successiva
+        a(href='/serie/'+tipo+'/'+dopo) Successiva
     each riga, i in righe
       .row
         each colonna, j in riga
@@ -14,15 +14,15 @@ block content
             .col-3
               - var img=colonna['images']['poster'].split('/').reverse()[0];
               .centerBlock
-                a(href="https://rivertorrent.com/serie/info/"+colonna['_id']+'/'+img)
+                a(href="/serie/info/"+colonna['_id']+'/'+img)
                   img.img-fluid(src=colonna['images']['poster'])
               h5.text-center #{colonna['title']}
               .text-center
-                a(href="https://rivertorrent.com/serie/info/"+colonna['_id']+'/'+img) Download
+                a(href="/serie/info/"+colonna['_id']+'/'+img) Download
           else
             .col-3
     .text-center
       p
-        a(href='https://rivertorrent.com/serie/'+tipo+'/'+prima) Precedente 
+        a(href='/serie/'+tipo+'/'+prima) Precedente 
         |  pagina #{ora} di #{totale} 
-        a(href='https://rivertorrent.com/serie/'+tipo+'/'+dopo) Successiva
+        a(href='/serie/'+tipo+'/'+dopo) Successiva
