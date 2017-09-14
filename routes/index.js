@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var request=require('request');
 router.get('/',function(req,res,next){
-  request.get('http://demo.nicholasgiordano.it/trapi/status',function(err,response,body){
+  request.get('https://tv-v2.api-fetch.website/status',function(err,response,body){
     var payload={'status':'N/A','totalMovies':'N/A','totalShows':'N/A'};
     try{
       var payload=JSON.parse(body);

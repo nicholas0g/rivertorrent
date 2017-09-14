@@ -4,13 +4,13 @@ var request=require('request');
 router.get('/:filtro/:pg',function(req,res,next){
   var page=parseInt(req.params['pg']);
   var standard=['rating','trending','name','year'];
-  var url='http://demo.nicholasgiordano.it/trapi/movies/'+page+'?sort='+req.params['filtro'];
-  if(standard.indexOf(req.params['filtro'])==-1) url='http://demo.nicholasgiordano.it/trapi/movies/'+page+'?sort=rating&genre='+req.params['filtro'];
+  var url='https://tv-v2.api-fetch.website/movies/'+page+'?sort='+req.params['filtro'];
+  if(standard.indexOf(req.params['filtro'])==-1) url='https://tv-v2.api-fetch.website/movies/'+page+'?sort=rating&genre='+req.params['filtro'];
   request.get(url,function(err,response,body){
     var payload;
     try{
     payload=JSON.parse(body);
-    request.get('http://demo.nicholasgiordano.it/trapi/movies/',function(err,resp,data){
+    request.get('https://tv-v2.api-fetch.website/movies/',function(err,resp,data){
       var prima,dopo;
       var totale=JSON.parse(data).length;
       if(page==1) prima=1;
@@ -62,7 +62,7 @@ router.post('/ricerca',function(req,res,next){
 
 router.get('/info/:id/al',function(req,res,next){
   var id=req.params['id'];
-  request.get('http://demo.nicholasgiordano.it/trapi/movie/'+id,function(err,resp,body){
+  request.get('https://tv-v2.api-fetch.website/movie/'+id,function(err,resp,body){
     var payload=JSON.parse(body);
     res.render('film',{dati:payload})
   })
